@@ -7,7 +7,7 @@ namespace IntrepidProducts.BlackJackAdvisor
         Hit = 1,
         Hold = 2,
         DoubleDown = 3,
-        Split
+        Split = 4
     }
 
     public class BlackJackAdvisor

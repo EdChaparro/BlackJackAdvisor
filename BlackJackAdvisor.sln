@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJackAdvisor", "src\BlackJackAdvisor\BlackJackAdvisor.csproj", "{2B314E4E-9979-4DC9-9564-F8EB580F4DD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{42C632B0-97B1-478E-AD25-D4D01C92AE1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.BlackJackAdvisor", "src\Tests\Test.BlackJackAdvisor\Test.BlackJackAdvisor.csproj", "{797FD520-46BC-476F-A730-83806C11B9F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B314E4E-9979-4DC9-9564-F8EB580F4DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B314E4E-9979-4DC9-9564-F8EB580F4DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B314E4E-9979-4DC9-9564-F8EB580F4DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B314E4E-9979-4DC9-9564-F8EB580F4DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797FD520-46BC-476F-A730-83806C11B9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797FD520-46BC-476F-A730-83806C11B9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797FD520-46BC-476F-A730-83806C11B9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797FD520-46BC-476F-A730-83806C11B9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{797FD520-46BC-476F-A730-83806C11B9F8} = {42C632B0-97B1-478E-AD25-D4D01C92AE1C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD8EC5F1-92CF-4815-9E27-F22468B1F5D2}
+	EndGlobalSection
+EndGlobal

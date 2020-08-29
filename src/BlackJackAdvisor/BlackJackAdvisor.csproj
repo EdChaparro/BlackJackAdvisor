@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>IntrepidProducts.BlackJackAdvisor</AssemblyName>
+    <RootNamespace>IntrepidProducts.BlackJackAdvisor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="IntrepidProducts.Common">
+      <HintPath>..\..\dependencies\IntrepidProducts.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IntrepidProducts.DeckOfCards">
+      <HintPath>..\..\dependencies\IntrepidProducts.DeckOfCards.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

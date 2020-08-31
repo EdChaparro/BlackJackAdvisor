@@ -26,8 +26,8 @@ namespace IntrepidProducts.BlackJackAdvisor
 
             if (dealerCard.IsNumber)
             {
-                var value = (int) dealerCard.CardRank;
-                if (value < 7)
+                var dealerCardCardRank = (int) dealerCard.CardRank;
+                if (dealerCardCardRank < 7)
                 {
                     if ((gamblerHand.Count > 9) && (gamblerHand.Count < 12))
                     {

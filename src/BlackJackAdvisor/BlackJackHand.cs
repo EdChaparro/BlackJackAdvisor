@@ -31,14 +31,9 @@ namespace IntrepidProducts.BlackJackAdvisor
         {
             get
             {
-                if (_cards.Count != 2)
-                {
-                    return false;
-                }
-
-                return _cards.Any(x => x.IsAce) &&
-                       (_cards.Any(x => x.IsRoyalty) ||
-                        _cards.Any(x => x.CardRank == Rank.Ten));
+                return _cards.Count == 2 && (_cards.Any(x => x.IsAce) &&
+                                             (_cards.Any(x => x.IsRoyalty) ||
+                                              _cards.Any(x => x.CardRank == Rank.Ten)));
             }
         }
 

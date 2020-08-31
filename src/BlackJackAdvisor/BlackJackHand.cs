@@ -44,34 +44,19 @@ namespace IntrepidProducts.BlackJackAdvisor
 
         public bool HasSoftCount => _cards.Any(x => x.IsAce);
 
-        public int SoftCount
+        public int SoftCount => CalculateCount(aceValue: 1);
+        public int Count => CalculateCount(aceValue: 11);
+
+        private int CalculateCount(int aceValue)
         {
-            get
-            {
-                var aceCount = _cards.Count(x => x.IsAce);
+            var aceCount = _cards.Count(x => x.IsAce) * aceValue;
 
-                var royaltyCount = _cards.Count(x => x.IsRoyalty) * 10;
+            var royaltyCount = _cards.Count(x => x.IsRoyalty) * 10;
 
-                var standardCount = _cards.Where(x => x.IsNumber)
-                    .Sum(x => (int) x.CardRank);
+            var standardCount = _cards.Where(x => x.IsNumber)
+                .Sum(x => (int)x.CardRank);
 
-                return aceCount + royaltyCount + standardCount;
-            }
-        }
-
-        public int Count
-        {
-            get
-            {
-                var aceCount = _cards.Count(x => x.IsAce) * 11;
-
-                var royaltyCount = _cards.Count(x => x.IsRoyalty) * 10;
-
-                var standardCount = _cards.Where(x => x.IsNumber)
-                    .Sum(x => (int)x.CardRank);
-
-                return aceCount + royaltyCount + standardCount;
-            }
+            return aceCount + royaltyCount + standardCount;
         }
     }
 }

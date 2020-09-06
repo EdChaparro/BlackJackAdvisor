@@ -25,9 +25,12 @@ namespace IntrepidProducts.BlackJackAdvisor
 
         public bool Is21 => Count == 21;
 
-        public bool HasJustTwoAces => _cards.Count == 2 && _cards.Count(x => x.IsAce) > 1;
-        public bool HasJustTwoEights => _cards.Count == 2 &&
-                                        _cards.Count(x => x.CardRank == Rank.Eight) > 1;
+        public bool HasJustTwoAces => IsPairOf(Rank.Ace);
+
+        public bool IsPairOf(Rank rank) =>
+            _cards.Count == 2 &&
+            _cards.First().CardRank == rank &&
+            _cards.Last().CardRank == rank;
 
         public bool IsBlackJack =>
             _cards.Count == 2 && (_cards.Any(x => x.IsAce) &&

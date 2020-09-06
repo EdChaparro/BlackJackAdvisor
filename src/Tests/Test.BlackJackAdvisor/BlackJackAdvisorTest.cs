@@ -59,7 +59,7 @@ namespace IntrepidProducts.BlackJackAdvisor.Tests
         }
 
         [TestMethod]
-        public void ShouldAlwaysSplitWhenGamblerHasTwoAces()
+        public void ShouldAlwaysSplitAcePair()
         {
             var gamblerHand = new BlackJackHand(
                 new Card(Rank.Ace, Suit.Diamonds),
@@ -71,13 +71,49 @@ namespace IntrepidProducts.BlackJackAdvisor.Tests
         }
 
         [TestMethod]
-        public void ShouldAlwaysSplitWhenGamblerHasTwoEights()
+        public void ShouldAlwaysSplitEightPair()
         {
             var gamblerHand = new BlackJackHand(
                 new Card(Rank.Eight, Suit.Diamonds),
                 new Card(Rank.Eight, Suit.Hearts));
 
             Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Seven, Suit.Spades), gamblerHand));
+        }
+
+        [TestMethod]
+        public void ShouldSplitSevenPairWhenDealerHasTwoToSix()
+        {
+            var gamblerHand = new BlackJackHand(
+                new Card(Rank.Seven, Suit.Diamonds),
+                new Card(Rank.Seven, Suit.Hearts));
+
+            Assert.AreEqual(BlackJackAction.Hit,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Ace, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Two, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Three, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Four, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Five, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Six, Suit.Spades), gamblerHand));
+
+            Assert.AreEqual(BlackJackAction.Hit,
                 BlackJackAdvisor.RecommendAction
                     (new Card(Rank.Seven, Suit.Spades), gamblerHand));
         }

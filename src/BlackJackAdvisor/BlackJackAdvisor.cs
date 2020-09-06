@@ -19,7 +19,7 @@ namespace IntrepidProducts.BlackJackAdvisor
                 return BlackJackAction.Hold;
             }
 
-            if ((gamblerHand.HasJustTwoAces) || (gamblerHand.HasJustTwoEights))
+            if (ShouldSplit(dealerCard, gamblerHand))
             {
                 return BlackJackAction.Split;
             }
@@ -39,6 +39,16 @@ namespace IntrepidProducts.BlackJackAdvisor
             }
 
             return (gamblerHand.Count < 17) ? BlackJackAction.Hit : BlackJackAction.Hold;
+        }
+
+        private static bool ShouldSplit(Card dealerCard, BlackJackHand gamblerHand)
+        {
+            if ((gamblerHand.HasJustTwoAces) || (gamblerHand.IsPairOf(Rank.Eight)))
+            {
+                return true;
+            }
+
+            return dealerCard.IsBetween2And6Inclusive() && gamblerHand.IsPairOf(Rank.Seven);
         }
     }
 }

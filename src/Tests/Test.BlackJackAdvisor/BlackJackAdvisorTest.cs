@@ -42,7 +42,6 @@ namespace IntrepidProducts.BlackJackAdvisor.Tests
 
             Assert.AreEqual(BlackJackAction.Hit, BlackJackAdvisor.RecommendAction
                 (new Card(Rank.Seven, Suit.Spades), gamblerHand));
-
         }
 
         [TestMethod]
@@ -69,6 +68,18 @@ namespace IntrepidProducts.BlackJackAdvisor.Tests
             Assert.AreEqual(BlackJackAction.Split, 
                 BlackJackAdvisor.RecommendAction
                 (new Card(Rank.Seven, Suit.Spades), gamblerHand));
+        }
+
+        [TestMethod]
+        public void ShouldAlwaysSplitWhenGamblerHasTwoEights()
+        {
+            var gamblerHand = new BlackJackHand(
+                new Card(Rank.Eight, Suit.Diamonds),
+                new Card(Rank.Eight, Suit.Hearts));
+
+            Assert.AreEqual(BlackJackAction.Split,
+                BlackJackAdvisor.RecommendAction
+                    (new Card(Rank.Seven, Suit.Spades), gamblerHand));
         }
 
         [TestMethod]

@@ -19,7 +19,7 @@ namespace IntrepidProducts.BlackJackAdvisor
                 return BlackJackAction.Hold;
             }
 
-            if (gamblerHand.HasJustTwoAces)
+            if ((gamblerHand.HasJustTwoAces) || (gamblerHand.HasJustTwoEights))
             {
                 return BlackJackAction.Split;
             }

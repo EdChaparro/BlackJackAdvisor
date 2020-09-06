@@ -27,15 +27,10 @@ namespace IntrepidProducts.BlackJackAdvisor
 
         public bool HasJustTwoAces => _cards.Count == 2 && _cards.Count(x => x.IsAce) > 1;
 
-        public bool IsBlackJack
-        {
-            get
-            {
-                return _cards.Count == 2 && (_cards.Any(x => x.IsAce) &&
-                                             (_cards.Any(x => x.IsRoyalty) ||
-                                              _cards.Any(x => x.CardRank == Rank.Ten)));
-            }
-        }
+        public bool IsBlackJack =>
+            _cards.Count == 2 && (_cards.Any(x => x.IsAce) &&
+                                  (_cards.Any(x => x.IsRoyalty) ||
+                                   _cards.Any(x => x.CardRank == Rank.Ten)));
 
         public bool HasSoftCount => _cards.Any(x => x.IsAce);
 
